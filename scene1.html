@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@800&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="w-[1920px] h-[1080px] relative">
+
+    <div class="text-center mt-10 mx-6 p-5 w-fit right-0 float-right rounded-xl drop-shadow-3xl">
+        <p id="day" class="font-kanit text-3xl text-gray-50 [text-shadow:_0_1px_5px_rgb(0_0_0_/_40%)]"></p>
+        <p id="hours" class="font-kanit text-7xl text-gray-50 [text-shadow:_0_1px_5px_rgb(0_0_0_/_40%)]"></p>
+    </div>
+
+    <div
+        class="absolute bottom-0 right-0 mb-[12px] mr-[14px] rounded-xl [box-shadow:0_0_40px_rgb(0_0_0_/_90%)] w-[635px] h-[353px]">
+    </div>
+    <div class="bg-black min-w-[286px] h-44 bottom-0 absolute rounded-tr-xl drop-shadow-4xl"></div>
+    <div class="bg-black w-[812px] h-24 bottom-0 absolute rounded-tr-xl drop-shadow-4xl"></div>
+
+    <script>
+
+        setInterval(() => {
+            var date = new Date();
+            const day = date.toLocaleDateString("es-ES", { month: "long", weekday: "long", day: "2-digit" });
+            const hours = date.toLocaleDateString("es-ES", { hour: "2-digit", minute: "2-digit" })
+            const hour = hours.split(", ")[1];
+            document.getElementById("day").innerHTML = day;
+            console.log(hours)
+            document.getElementById("hours").innerHTML = hour;
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
